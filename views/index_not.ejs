@@ -1,0 +1,44 @@
+<head>
+<title>Hi There!</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function (){
+		
+		$('#submit_btn').on('click', function() {
+			var data_passed = {
+			id: 2,
+			name: 'Bob'
+			};
+			$.ajax({
+				type: 'POST',
+				url: '/api/submit',
+				data: data_passed,
+				success: function() {
+					console.log('Success!')
+				},
+				error: function() {
+					console.log('Server Error!')
+				}
+			});
+		});
+	});
+
+	function postItem(){
+		console.log("Hi!");
+	}
+	</script>
+</head>
+<body>
+	<h1>Hello World!</h1>
+	<p>Welcome to the hello world page in node.js</p>
+	<a href="/about">About</a>
+
+	<form method="post" action="/">
+    	<input type="text" name="username">
+    	<input type="submit">
+	</form>
+
+	<button id="submit_btn" onclick="postItem()">Click Me!
+
+	
+</body>
