@@ -2,7 +2,6 @@ var selected = 'Architekt';
 var project = 'null';
 var user = false;
 var data_passed = {
-	'email':'',
 	'likes':[],
 	'posts':[],
 	'project':'Null'
@@ -72,43 +71,17 @@ function getSelected(selection){
 				 	//	console.log(likes_array[i])
 				 	//}
 				 	window.data_passed['likes'] = likes_array
-				})
+				});
 
-				FB.api('/me/about',
+				FB.api('/me',
 				'GET',
-				 function(response){
+				{"fields":"about,education,work,age_range"},
+				function(response){
 				 	console.dir(response)
 				 	var about = response['data']
 				 	console.log(about);
 				 	window.data_passed['about'] = about
-				})
-
-				FB.api('/me/education?limit=2&since=2017-01-16T19:25:16+0000',
-				'GET',
-				{"limit":"2"},
-				 function(response){
-				 	console.dir(response);
-				 	var edu_array = response['data']
-				 	var l_length = edu_array.length
-				 	//console.log(l_length)
-				 	//for (var i = 0; i < l_length; i++) {
-				 	//	console.log(edu_array[i])
-				 	//}
-				 	window.data_passed['education'] = edu_array
-				})
-
-				FB.api('/me/work?limit=2&since=2017-01-16T19:25:16+0000',
-				'GET',
-				{"limit":"2"},
-				 function(response){
-				 	console.dir(response);
-				 	var work_array = response['data']
-				 	var l_length = work_array.length
-				 	console.log(l_length)
-				 	for (var i = 0; i < l_length; i++) {
-				 		console.log(work_array[i])
-				 	}
-				 	window.data_passed['work'] = work				})
+				});
 
 			}, {scope: 'publish_actions, user_likes, user_posts, user_about_me, user_birthday, user_education_history, user_work_history'});
 
