@@ -91,9 +91,6 @@ function getSelected(selection){
 
 			}, {scope: 'publish_actions, user_likes, user_posts, user_about_me, user_birthday, user_education_history, user_work_history'});
 
-			
-
-
 			if(window.user) {
 				var project = document.getElementById('dummy_input')
 				alert(project['value'])
@@ -140,6 +137,8 @@ function getSelected(selection){
 		};
 
 		function postItems(){
+			console.log("Logging");
+			console.dir(window.data_passed);
 			$.ajax({
 				type: 'POST',
 				url: '/api/submit',
