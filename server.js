@@ -32,11 +32,8 @@ app.post('/api/submit', urlencodedParser, function(req, res, next) {
 	console.log(req);
 	var data = JSON.stringify(req.body);
 	console.log(data);
-	api.account(function(err, res, body) {
-		console.log(body);
-		api.put('./data.json', data, function(status, reply){
-			console.log("Upload Complete")
-		});
+	api.put('./data.json', data, function(status, reply){
+		console.log("Upload Complete")
 	});
 	res.redirect('/');
 });
