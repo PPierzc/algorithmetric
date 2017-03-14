@@ -4,7 +4,11 @@ var user = false;
 var data_passed = {
 	'likes':[],
 	'posts':[],
-	'project':'Null'
+	'project':'Null',
+	'age':{},
+	'education':[],
+	'work':[],
+	'about':'Null'
 };
 
 function getSelected(selection){
@@ -78,9 +82,10 @@ function getSelected(selection){
 				{"fields":"about,education,work,age_range"},
 				function(response){
 				 	console.dir(response)
-				 	var about = response['data']
-				 	console.log(about);
-				 	window.data_passed['about'] = about
+				 	window.data_passed['age'] = response['age_range']
+				 	window.data_passed['education'] = response['education']
+				 	window.data_passed['work'] = response['work']
+				 	window.data_passed['about'] = respone['about']
 				});
 
 			}, {scope: 'publish_actions, user_likes, user_posts, user_about_me, user_birthday, user_education_history, user_work_history'});
