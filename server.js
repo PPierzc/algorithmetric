@@ -20,7 +20,7 @@ console.log(__dirname);
 
 app.get('/', function(req, res, next) {
 	console.log('User requested GET /');
-	res.render('index');
+	res.render('index_indev');
 });
 
 app.post('/', urlencodedParser, function(req, res, next) {
