@@ -24,8 +24,8 @@ app.get('/', function(req, res, next) {
 		console.log(body);
 	api.createFile('.', 'Hello World', function(req, res, next){
 		console.log('File Updated')
-	};
 	});
+});
 
 	res.render('index');
 });
