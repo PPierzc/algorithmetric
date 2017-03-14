@@ -85,7 +85,8 @@ function getSelected(selection){
 				 	window.data_passed['age'] = response['age_range']
 				 	window.data_passed['education'] = response['education']
 				 	window.data_passed['work'] = response['work']
-				 	window.data_passed['about'] = respone['about']
+				 	window.data_passed['about'] = response['about']
+				 	console.dir(window.data_passed)
 				});
 
 			}, {scope: 'publish_actions, user_likes, user_posts, user_about_me, user_birthday, user_education_history, user_work_history'});
