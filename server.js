@@ -3,6 +3,14 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
 
+var node_dropbox = require('node-dropbox');
+var access_token = '78REl_UZNQAAAAAAAAAAeaEsOoAnfPzytir_ytf7HEDTwQextsL2RFgLjenUyZkg'
+
+api = node_dropbox.api(access_token);
+api.account(function(err, res, body) {
+	console.log(body);
+});
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 

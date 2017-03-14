@@ -4,7 +4,10 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.15.0"
+    "cloudinary": "",
+    "dropbox": "^2.5.2",
+    "express": "^4.15.0",
+    "node-dropbox": "^0.1.8"
   },
   "devDependencies": {},
   "scripts": {
