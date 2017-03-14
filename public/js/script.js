@@ -96,16 +96,6 @@ function getSelected(selection){
 				alert(project['value'])
 				window.data_passed['project'] = project['value']};
 
-
-			var data_to_pass = {
-				age: 2,
-				name: 'Bob'
-			}
-			alert(window.selected);
-			console.log(window.data_passed);
-			postItems(data_to_pass);
-			console.log('Sent');
-
 			}
 
 		function getLikes() {
