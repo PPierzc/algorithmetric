@@ -20,13 +20,6 @@ console.log(__dirname);
 
 app.get('/', function(req, res, next) {
 	console.log('User requested GET /');
-	api.account(function(err, res, body) {
-		console.log(body);
-	api.createFile('./test.txt', 'Hello World', function(req, res, next){
-		console.log('File Updated')
-	});
-});
-
 	res.render('index');
 });
 
@@ -36,7 +29,14 @@ app.post('/', urlencodedParser, function(req, res, next) {
 });
 
 app.post('/api/submit', urlencodedParser, function(req, res, next) {
-	console.log(JSON.stringify(req.body));
+	var data = JSON.stringify(req.body);
+	console.log(data);
+	api.account(function(err, res, body) {
+		console.log(body);
+		api.createFile('./data.json', data, function(req, res, next){
+			console.log(res)
+		});
+	});
 	res.redirect('/');
 });
 
