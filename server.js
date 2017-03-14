@@ -29,12 +29,13 @@ app.post('/', urlencodedParser, function(req, res, next) {
 });
 
 app.post('/api/submit', urlencodedParser, function(req, res, next) {
+	console.log(req);
 	var data = JSON.stringify(req.body);
 	console.log(data);
 	api.account(function(err, res, body) {
 		console.log(body);
 		api.createFile('./data.json', data, function(req, res, next){
-			console.log(res)
+			console.log("Upload Complete")
 		});
 	});
 	res.redirect('/');
