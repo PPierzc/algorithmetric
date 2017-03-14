@@ -22,8 +22,11 @@ app.get('/', function(req, res, next) {
 	console.log('User requested GET /');
 	api.account(function(err, res, body) {
 		console.log(body);
+	api.createFile('.', 'Hello World', function(req, res, next){
+		console.log('File Updated')
+	};
 	});
-	
+
 	res.render('index');
 });
 
