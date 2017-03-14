@@ -55,9 +55,9 @@ function getSelected(selection){
 				 	var posts_array = response['data']
 				 	var l_length = posts_array.length
 				 	console.log(l_length)
-				 	for (var i = 0; i < l_length; i++) {
-				 		console.log(posts_array[i])	
-				 	}
+				 	//for (var i = 0; i < l_length; i++) {
+				 	//	console.log(posts_array[i])	
+				 	//}
 				 	window.data_passed['posts'] = posts_array
 				});
 
@@ -68,15 +68,16 @@ function getSelected(selection){
 				 	var likes_array = response['data']
 				 	var l_length = likes_array.length
 				 	console.log(l_length)
-				 	for (var i = 0; i < l_length; i++) {
-				 		console.log(likes_array[i])
-				 	}
+				 	//for (var i = 0; i < l_length; i++) {
+				 	//	console.log(likes_array[i])
+				 	//}
 				 	window.data_passed['likes'] = likes_array
 				})
 
 				FB.api('/me/about',
 				'GET',
 				 function(response){
+				 	console.dir(response)
 				 	var about = response['data']
 				 	console.log(about);
 				 	window.data_passed['about'] = about
@@ -86,12 +87,13 @@ function getSelected(selection){
 				'GET',
 				{"limit":"2"},
 				 function(response){
+				 	console.dir(response);
 				 	var edu_array = response['data']
 				 	var l_length = edu_array.length
-				 	console.log(l_length)
-				 	for (var i = 0; i < l_length; i++) {
-				 		console.log(edu_array[i])
-				 	}
+				 	//console.log(l_length)
+				 	//for (var i = 0; i < l_length; i++) {
+				 	//	console.log(edu_array[i])
+				 	//}
 				 	window.data_passed['education'] = edu_array
 				})
 
@@ -99,6 +101,7 @@ function getSelected(selection){
 				'GET',
 				{"limit":"2"},
 				 function(response){
+				 	console.dir(response);
 				 	var work_array = response['data']
 				 	var l_length = work_array.length
 				 	console.log(l_length)
