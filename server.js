@@ -7,9 +7,6 @@ var node_dropbox = require('node-dropbox');
 var access_token = '78REl_UZNQAAAAAAAAAAeaEsOoAnfPzytir_ytf7HEDTwQextsL2RFgLjenUyZkg'
 
 api = node_dropbox.api(access_token);
-api.account(function(err, res, body) {
-	console.log(body);
-});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -23,6 +20,10 @@ console.log(__dirname);
 
 app.get('/', function(req, res, next) {
 	console.log('User requested GET /');
+	api.account(function(err, res, body) {
+		console.log(body);
+	});
+	
 	res.render('index');
 });
 
