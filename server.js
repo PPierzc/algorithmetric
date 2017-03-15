@@ -5,22 +5,22 @@ var app = express();
 
 var dbox = require('dbox');
 var api = dbox.app({"app_key": "bwqtwxxzful4f4w", "app_secret": "w8hsxjwngwf0nz1"});
-var app_access_token = '78REl_UZNQAAAAAAAAAAe7P8LhQ9CtmnsKZ2glDpJOxhDvPlbiQk1UyyIV55Ivfp';
+var access_token = '78REl_UZNQAAAAAAAAAAfdxwfUFuyYKiwG4F2SFq_yefP-GJexCD-olU-q4TO77J';
 
 var app_request_token = 'Null'
-api.requesttoken(function(status, request_token){
-	app_request_token = request_token
-  	console.log(request_token)
-})
+//api.requesttoken(function(status, request_token){
+//	app_request_token = request_token
+//  	console.log(request_token)
+//})
 //window.open('https://www.dropbox.com/1/oauth/authorize?oauth_token=#{ request_token.oauth_token }')
 
-api.accesstoken(app_request_token, function(status, access_token){
-	app_access_token = access_token
-  	console.log(access_token)
-})
+//api.accesstoken(app_request_token, function(status, access_token){
+//	app_access_token = access_token
+//  	console.log(access_token)
+//})
 
-
-var client = api.client(app_access_token);
+console.log(access_token);
+var client = api.client(access_token);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -44,7 +44,6 @@ app.post('/', urlencodedParser, function(req, res, next) {
 
 app.post('/api/submit', urlencodedParser, function(req, res, next) {
 	var data = JSON.stringify(req.body);
-	console.log(data);
 	client.put('./data.json', data, function(status, reply){
 		console.log("Upload Complete")
 		console.log(reply)
