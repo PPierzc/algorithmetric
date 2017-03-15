@@ -5,7 +5,7 @@ var app = express();
 
 var dbox = require('dbox');
 var api = dbox.app({"app_key": "bwqtwxxzful4f4w", "app_secret": "w8hsxjwngwf0nz1"});
-var access_token = '78REl_UZNQAAAAAAAAAAe7P8LhQ9CtmnsKZ2glDpJOxhDvPlbiQk1UyyIV55Ivfp';
+var app_access_token = '78REl_UZNQAAAAAAAAAAe7P8LhQ9CtmnsKZ2glDpJOxhDvPlbiQk1UyyIV55Ivfp';
 
 var app_request_token = 'Null'
 api.requesttoken(function(status, request_token){
@@ -15,11 +15,12 @@ api.requesttoken(function(status, request_token){
 //window.open('https://www.dropbox.com/1/oauth/authorize?oauth_token=#{ request_token.oauth_token }')
 
 api.accesstoken(app_request_token, function(status, access_token){
-  console.log(access_token)
+	app_access_token = access_token
+  	console.log(access_token)
 })
 
 
-var client = api.client(access_token);
+var client = api.client(app_access_token);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
