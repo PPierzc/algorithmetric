@@ -7,12 +7,14 @@ var dbox = require('dbox');
 var api = dbox.app({"app_key": "bwqtwxxzful4f4w", "app_secret": "w8hsxjwngwf0nz1"});
 var access_token = '78REl_UZNQAAAAAAAAAAe7P8LhQ9CtmnsKZ2glDpJOxhDvPlbiQk1UyyIV55Ivfp';
 
+var app_request_token = 'Null'
 api.requesttoken(function(status, request_token){
-  console.log(request_token)
+	app_request_token = request_token
+  	console.log(request_token)
 })
 //window.open('https://www.dropbox.com/1/oauth/authorize?oauth_token=#{ request_token.oauth_token }')
 
-api.accesstoken(request_token, function(status, access_token){
+api.accesstoken(app_request_token, function(status, access_token){
   console.log(access_token)
 })
 
