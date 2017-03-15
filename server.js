@@ -21,6 +21,7 @@ var app_request_token = 'Null'
 
 console.log(access_token);
 var client = api.client(access_token);
+console.dir(client);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
