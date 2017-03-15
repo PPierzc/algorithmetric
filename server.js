@@ -11,6 +11,7 @@ const dfs = require('dropbox-fs')({
 });
 
 dfs.readdir('.', function(err, result){
+	console.log(err);
 	console.log(result)
 })
 //var app_request_token = 'Null'
