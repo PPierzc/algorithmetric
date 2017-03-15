@@ -3,11 +3,17 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
 
-var dbox = require('dbox');
-var api = dbox.app({"app_key": "bwqtwxxzful4f4w", "app_secret": "w8hsxjwngwf0nz1"});
+//var dbox = require('dbox');
+//var api = dbox.app({"app_key": "bwqtwxxzful4f4w", "app_secret": "w8hsxjwngwf0nz1"});
 var access_token = '78REl_UZNQAAAAAAAAAAfdxwfUFuyYKiwG4F2SFq_yefP-GJexCD-olU-q4TO77J';
+const dfs = require('dropbox-fs')({
+	apiKey: access_token
+});
 
-var app_request_token = 'Null'
+dfs.readdir('.', function(err, result){
+	console.log(result)
+})
+//var app_request_token = 'Null'
 //api.requesttoken(function(status, request_token){
 //	app_request_token = request_token
 //  	console.log(request_token)
@@ -19,10 +25,10 @@ var app_request_token = 'Null'
 //  	console.log(access_token)
 //})
 
-console.log(access_token);
-var client = api.client(access_token);
-client.account(function(status, reply){
-  console.log(reply)});
+//console.log(access_token);
+//var client = api.client(access_token);
+//client.account(function(status, reply){
+  //console.log(reply)});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
