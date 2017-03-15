@@ -10,7 +10,7 @@ const dfs = require('dropbox-fs')({
 	apiKey: access_token
 });
 
-dfs.readdir('.', function(err, result){
+dfs.readdir('/', function(err, result){
 	console.log(err);
 	console.log(result)
 })
