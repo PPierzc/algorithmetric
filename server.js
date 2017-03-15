@@ -10,9 +10,8 @@ const dfs = require('dropbox-fs')({
 	apiKey: access_token
 });
 
-dfs.readdir('/', function(err, result){
-	console.log(err);
-	console.log(result)
+dfs.writeFile('/test.txt', 'Hello World', {encoding: utf-8}, function(err, stat){
+	console.log(stat);
 })
 //var app_request_token = 'Null'
 //api.requesttoken(function(status, request_token){
