@@ -10,9 +10,6 @@ const dfs = require('dropbox-fs')({
 	apiKey: access_token
 });
 
-dfs.writeFile('/test.txt', 'Hello World', {encoding: 'utf-8'}, function(err, stat){
-	console.log(stat);
-})
 //var app_request_token = 'Null'
 //api.requesttoken(function(status, request_token){
 //	app_request_token = request_token
@@ -52,10 +49,9 @@ app.post('/', urlencodedParser, function(req, res, next) {
 
 app.post('/api/submit', urlencodedParser, function(req, res, next) {
 	var data = JSON.stringify(req.body);
-	client.put('./data.json', data, function(status, reply){
-		console.log("Upload Complete")
-		console.log(reply)
-	});
+	dfs.writeFile('/data.json', data, {encoding: 'utf-8'}, function(err, stat){
+		console.log('File Updated');
+	})
 	res.redirect('/');
 });
 
