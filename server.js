@@ -56,7 +56,7 @@ app.post('/api/submit', urlencodedParser, function(req, res, next) {
 		file_data = JSON.parse(result);
 	})
 	//Add a new element into the json e.g. had 2 inputs like this {2:[object],1:object} and adding a new input then the json will look like this {3:[object], 2:[object], 1:[object]}
-	var existing_elements = file_data.getOwnPropertyNames(obj).length
+	var existing_elements = Object.getOwnPropertyNames(file_data).length
 	console.log(existing_elements);
 	file_data[existing_elements+1]=req.body
 	//stringify
