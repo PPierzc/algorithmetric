@@ -2,13 +2,15 @@ var selected = 'Architekt';
 var project = 'null';
 var user = false;
 var data_passed = {
-	'likes':[],
-	'posts':[],
-	'project':'Null',
-	'age':{},
-	'education':[],
-	'work':[],
-	'about':'Null'
+	1:{
+		'likes':[],
+		'posts':[],
+		'project':'Null',
+		'age':{},
+		'education':[],
+		'work':[],
+		'about':'Null'
+	}
 };
 
 function getSelected(selection){
