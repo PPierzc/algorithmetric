@@ -53,7 +53,8 @@ app.post('/api/submit', urlencodedParser, function(req, res, next) {
 	var file_data = {}
 	dfs.readFile('/data.json', function(err, result){
 		//Make it into a json
-		file_data = JSON.parse(result);
+		console.log(result);
+		file_data = result;
 	})
 	//Add a new element into the json e.g. had 2 inputs like this {2:[object],1:object} and adding a new input then the json will look like this {3:[object], 2:[object], 1:[object]}
 	var existing_elements = file_data.length
