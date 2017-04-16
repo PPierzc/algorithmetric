@@ -42,34 +42,35 @@ app.get('/', function(req, res, next) {
 	res.render('index');
 });
 
+app.get('/submitted', function(req, res, next) {
+	console.log('User requested GET /submitted');
+	res.render('submit');
+});
+
 app.post('/', urlencodedParser, function(req, res, next) {
 	console.log(req.body)
-	res.render('index');
+	res.render('submit');
 });
 
 app.post('/api/submit', urlencodedParser, function(req, res, next) {
 	//var data = JSON.stringify(req.body);
 	//Read data.json file
 	var file_data = {}
-	dfs.readFile('/data.json', {encoding: 'utf8'}, function(err, result){
-		//Make it into a json
+	dfs.readFile('/data.json', {encoding: 'utf-8'}, function(err, result){
+		//Make it into a json 
 		file_data = JSON.parse(result);
-	})
 	//Add a new element into the json e.g. had 2 inputs like this {2:[object],1:object} and adding a new input then the json will look like this {3:[object], 2:[object], 1:[object]}
 	var existing_elements = Object.keys(file_data).length + 1
 	console.log(existing_elements);
-	file_data.push(existing_elements:req.body)
+	file_data[existing_elements] = req.body
 	//stringify
 	var data = JSON.stringify(file_data)
 	//write to file
 	dfs.writeFile('/data.json', data, {encoding: 'utf-8'}, function(err, stat){
 		console.log('File Updated');
 	})
-	res.redirect('/');
-});
-
-app.get('/about', function(req, res) {
-	res.render('about');
+})
+	res.redirect('/submitted');
 });
 
 app.post('/', function(req, res) {

@@ -8,7 +8,8 @@ var data_passed = {
 	'age':{},
 	'education':[],
 	'work':[],
-	'about':'Null'
+	'about':'Null',
+	'personality':selected
 };
 
 function getSelected(selection){
@@ -17,17 +18,35 @@ function getSelected(selection){
 		}
 
 		function addHTML(){
-			var dummy = '<form id="dummy" onsubmit="return false;">Nazwa twojego projektu <input class="dummy" type="text" name="project" id="dummy_input"></form>'
+			var dummy = '<form id="dummy" onsubmit="return false;">Nazwa twojego projektu <input class="dummy" type="text" name="project" id="dummy_input"><br /><br /></form>'
 			if(document.getElementById('zwzt').checked){
 				document.getElementById('wrapper').innerHTML += dummy
-				window.user = true
+				window.user = true;
 			}
 			else{
 				var element = document.getElementById('dummy')
 				element.parentNode.removeChild(element)
+				window.user = false;
+			}
+		}
+
+		function enableButton(){
+			var enabled = '<a id="submit" class="btn btn-outline btn-xl" onclick="postItems()">Wyślij Dane</a>'
+			var disabled = '<a id="submit" alt="Wyraź zgodę na przetwarzanie danych" class="btn btn-outline btn-xl disabled">Wyślij Dane</a>'
+			if(document.getElementById('agree').checked){
+				var element = document.getElementById('submit')
+				element.parentNode.removeChild(element)
+				document.getElementById('submit-button').innerHTML += enabled
+				window.user = true
+			}
+			else{
+				var element = document.getElementById('submit')
+				element.parentNode.removeChild(element)
+				document.getElementById('submit-button').innerHTML += disabled
 				window.user = false
 			}
 		}
+
 
 		window.fbAsyncInit = function() {
 			FB.init({
@@ -128,16 +147,18 @@ function getSelected(selection){
 
 		function postItems(){
 			console.log("Logging");
-			console.dir(window.data_passed);
+			window.data_passed.personality = window.selected;
+			window.data_passed.project = document.getElementById('dummy_input').value;
 			$.ajax({
 				type: 'POST',
 				url: '/api/submit',
 				data: window.data_passed,
 				success: function() {
-					console.log('Success!')
+					//window.location.href = "/submitted";
+					console.log("Hurray!");
 				},
 				error: function() {
-					console.log('Server Error!')
+					alert('Ups coś poszło nie tak :( \n Spróbuj ponownie :)')
 				}
 			});
 		};

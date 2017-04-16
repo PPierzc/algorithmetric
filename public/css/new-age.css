@@ -50,11 +50,11 @@ h4,
 h5,
 h6 {
   font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
-  font-weight: 200;
+  font-weight: 3000;
   letter-spacing: 1px;
 }
 p {
-  font-size: 18px;
+  font-size: 10px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
@@ -124,12 +124,9 @@ p {
   }
   .navbar-default .nav > li > a:hover,
   .navbar-default .nav > li > a:focus:hover {
-    color: white;
+    color: black;
   }
-  .navbar-default.affix {
-    background-color: white;
-    border-color: rgba(34, 34, 34, 0.1);
-  }
+
   .navbar-default.affix .navbar-header .navbar-brand {
     color: #222222;
   }
@@ -405,9 +402,9 @@ footer ul li a.active {
   padding-left: 0;
 }
 .btn-outline {
-  color: white;
-  border-color: white;
-  border: 1px solid;
+  color: #fdcc52;
+  border-color: #fdcc52;
+  border: 2px solid;
 }
 .btn-outline:hover,
 .btn-outline:focus,

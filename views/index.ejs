@@ -11,7 +11,7 @@
     <title>Algorithmetric</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -39,74 +39,21 @@
 </head>
 
 <body id="page-top">
-
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top animated fadeInDown">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Algorithmertic</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#download">Nakarm Algorytm</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#features">Twoje Dane</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Kontakt</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-7">
-                    <div class="header-content">
-                        <div class="header-content-inner">
-                            <h1 class="animated bounceInDown">Algorithmetric to algorytm, który ocenia twoją osobowość na podstawie profilu Facebookowego!</h1>
-                            <a href="#download" class="btn btn-outline btn-xl page-scroll animated bounceInUp">Pomóż go stworzyć!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5">
-                    <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white animated bounceInRight">
-                            <div class="device">
-                                <div class="screen">
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="img/demo-screen-2.jpg" class="img-responsive" alt="">
-                                </div>
-                                <div class="button">
-                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <section id="download" class="download bg-primary text-center">
-        <div class="container">
-            <div class="row">
+        <div id="title" class="container jumbotron animated fadeInDown">
+            <div class="row" >
                 <div class="col-md-8 col-md-offset-2">
-                    <h2 class="section-heading">Nakarm Algorytm, <br />danymi o Sobie.</h2>
-                    <p>Wypełnij poniższy formularz i pomóż w tworzeniu tego algorytmu</p>
-                    <a class="btn btn-outline btn-xl" onclick="window.open('https://www.16personalities.com/pl/darmowy-test-osobowosci')" >Wykonaj Test</a>
-                    <p>Podaj swój typ osobowości:</p>
+                    <h3  class="section-heading title">Nakarm Algorytm</h3>
+                    <p class="italic copy" style="font-size: 12pt; margin-bottom: 50px;">Wypełnij poniższy formularz i pomóż w tworzeniu tego algorytmu</p>
+
+                    <div class="checkbox" align="left">
+                        <input id="agree" type="checkbox" value="" onclick="enableButton()"><label for="agree">Wyrażam zgodę, na przetwarzanie moich danych osobowych: Polubione Strony na Facebooku, Posty na Facebooku oraz mój typ osobowości, w celu utworzenia algorytmu definującego osobowość poprzez profil na mediach społecznościowych.</label>
+                    </div>
+                    <div class="checkbox" align="left">
+                        <input type="checkbox" id="zwzt" value="zwzt" onclick="addHTML()"><label for="zwzt">Robiłem/am projekt w ramach platformy Zwolnienii z Teorii</label>
+                    </div>
+                    <div id='wrapper' align="left"></div>
+                    <p style="font-size: 14pt">Twoja Osobowość</p>
 
                     <select class="personality_select" onchange="getSelected(this)">
                         <option value="1">Architekt</option>
@@ -126,104 +73,19 @@
                         <option value="15">Przedsiębiorca</option>
                         <option value="16">Animator</option>
                     </select>
+                    <a class="btn btn-outline btn-xl" onclick="window.open('https://www.16personalities.com/pl/darmowy-test-osobowosci')" >Wykonaj Test</a>
                     <br />
-                    <form>
-                        <input id='zwzt' type="checkbox" name="zwzt" onclick="addHTML()">Wiąłem udział w ZWZT
-                    </form>
-                    <div id='wrapper'></div>
                     <br />
-                    <a class="btn btn-outline btn-xl" onclick="myFacebookLogin()">Zaloguj się na FB</a>
-                    <a class="btn btn-outline btn-xl" onclick="postItems()">Wyślij Dane</a>
                     <br />
-                    <p class="italic">Wyrażam zgodę, na przetwarzanie moich danych osobowych: Polubione Strony na Facebooku, Posty na Facebooku oraz mój typ osobowości, w celu utworzenia algorytmu definującego osobowość poprzez profil na mediach społecznościowych.</p> 
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="features" class="features">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="section-heading">
-                        <h2>Dane o Tobie?</h2>
-                        <p class="text-muted">Jakie i do czego są nam one potrzebne?</p>
-                        <hr>
+                    <br />
+                    <a class="btn btn-outline btn-xl fb" onclick="myFacebookLogin()">Zaloguj się na FB</a>
+                    <div id='submit-button' style="margin-top: 10px">
+                        <a id='submit' class="btn btn-outline btn-xl disabled" onlcik='window.location.href = "http://stackoverflow.com";'>Wyślij Dane</a>
                     </div>
+                    <br />
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device">
-                                <div class="screen">
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="img/demo-screen-2.jpg" class="img-responsive" alt=""> </div>
-                                <div class="button">
-                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-screen-smartphone text-primary"></i>
-                                    <h3>Posty</h3>
-                                    <p class="text-muted">Przeanalizujemy to co piszesz na swojej tablicy i czy to odwzorowuje twój charakter</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-camera text-primary"></i>
-                                    <h3>Like</h3>
-                                    <p class="text-muted">Przeanalizujemy co lubisz, aby zobaczyć czy ma to wpływ na twoją osobowość</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-present text-primary"></i>
-                                    <h3>Email</h3>
-                                    <p class="text-muted">Wykorzystamy go, aby ci podziękować i będzie on kluczem do twoich danych</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-lock-open text-primary"></i>
-                                    <h3>Zdjęcie Profliowe</h3>
-                                    <p class="text-muted">Jesteśmy ciekawi, czy twój wybór zdjęcia profilowego może uchylać informacji o tym kim jesteś!</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
 
-    <section class="cta">
-        <div class="cta-content">
-            <div class="container">
-                <h2>Nie czekaj.<br>Podziel się sobą.</h2>
-                <a href="#download" class="btn btn-outline btn-xl page-scroll">Nakarm Algorytm!</a>
             </div>
-        </div>
-        <div class="overlay"></div>
-    </section>
-
-    <section id="contact" class="contact bg-primary">
-        <div class="container">
-            <h2><i class="fa fa-heart"></i> wspierających algorytm</h2>
-            <ul class="list-inline list-social">
-                <li class="social-facebook">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-            </ul>
         </div>
     </section>
 
@@ -233,8 +95,6 @@
             <p align="left">Algorytm tworzony dla</p>
             <img src="img/sw_logo.png" class="logo" onclick="window.open('https://zwolnienizteorii.pl/#/app/home')">
         </div>
-        <div class = "col-md-2"><br /></div>
-        <p>Built on Heroku</p>
     </section>
     <footer>
         <div class="container">

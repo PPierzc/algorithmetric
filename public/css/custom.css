@@ -7,17 +7,58 @@
 }
 
 .features{
-  padding-bottom: 100px;
-  padding-top: 50px;
+  padding-bottom: 150px;
+  padding-top: 30px;
 }
 
 .personality_select{
-	border-radius: 15px;
-	padding: 5px;
+	padding: 10px;
+  width: 300px;
+  margin-left: 0px;
+  border: none;
+  background-color: #f1f2f2;
+  color: #a1a2a2;
+}
+select{
+
+    /* styling */
+  background-color: white;
+  border: thin solid #fdc947;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+
+  /* reset */
+
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #fdc947 50%),
+    linear-gradient(135deg, #fdc947 50%, transparent 50%),
+    linear-gradient(to right, #ededee, #ededee);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 3em) 0em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2px 5em;
+  background-repeat: no-repeat;
+}
+
+select:focus{
+  border-color: #fdc947; 
 }
 
 .zwzt{
-	background-color: #0000000
+	background-color: #000000;
 }
 
 .logo_open {
@@ -41,4 +82,146 @@
 
 .italic {
   font-style: italic;
+}
+
+.navbar-default.affix {
+  background-color: #e6e7e8;
+  border-color: #fdc947;
+}
+
+header {
+  background: none;
+  background-color: #e6e7e8
+}
+
+@media (min-width: 768px) {
+  .navbar-default {
+    background-color: #e6e7e8;
+    border-color: #fdc947;
+  }
+  h3{
+    font-size: 16px;
+    font-style: bold;
+  }
+
+.center { 
+  margin-left: 10%;
+  padding-top: 150px;
+}
+
+.bg-primary{
+  background: #e6e7e8;
+}
+
+.jumbotron{
+  background: none;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  width: 65%;
+  color: #8c8f91;
+}
+
+.title{
+  font-size: 32pt;
+}
+
+.copy{
+  font-size: 16pt;
+
+}
+
+.dummy{
+  border: none;
+  background-color: #f1f2f2;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 500px;
+  height: 40px;
+
+    background-image:
+    linear-gradient(to right, #fdc947, #fdc947);
+  background-position:
+    calc(100% - 10px) 30px;
+  background-size:
+    480px 2px;
+  background-repeat: no-repeat;
+}
+
+.checkbox{
+  width: 100%;
+}
+
+input[type="checkbox"]{
+  display: none;
+}
+
+input[type="checkbox"] + label{
+  position: relative;
+  background:url('../img/checkbox-inactive.png') no-repeat;
+  background-size: 30px 28px;
+  height: 11%;
+  width: 100%;
+  display: inline-block;
+  padding: 0 0 0 7%;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label{
+  background:url('../img/checkbox-active.png') no-repeat;
+  background-size: 30px 28px;
+  height: 11%;
+  width: 100%;
+  display: inline-block;
+  padding: 0 0 0 7%;
+  position: relative;
+  top: 0px;
+  left: 0;
+  z-index: 100;
+}
+
+@media (max-width: 767px) {
+
+.checkbox{
+  width: 500px;
+}
+
+input[type="checkbox"]{
+  display: none;
+}
+
+input[type="checkbox"] + label{
+  position: relative;
+  background:url('../../img/checkbox-inactive.png') no-repeat;
+  background-size: 30px 28px;
+  height: 11%;
+  width: 100%;
+  display: inline-block;
+  padding: 0 0 0 7%;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label{
+  background:url('../../img/checkbox-active.png') no-repeat;
+  background-size: 30px 28px;
+  height: 11%;
+  width: 100%;
+  display: inline-block;
+  padding: 0 0 0 7%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+}
+
+
+
+.fb {
+  border-color: #3b5998;
+  color: #3b5998;
+}
+
+.fb:hover {
+  background-color: #3b5998;
+  border-color: #3b5998;
 }
