@@ -50,7 +50,7 @@ function getSelected(selection){
 
 		window.fbAsyncInit = function() {
 			FB.init({
-				appId: '1181298505271725',
+				appId: '987623197972591',
 				cookie: true,
 				xfbml: true,
 				version: 'v2.8'
