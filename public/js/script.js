@@ -85,7 +85,7 @@ function getSelected(selection){
 
 			  	FB.api('/me/likes?limit=100',
 				'GET',
-				{"limit":"10"0},
+				{"limit":"10"},
 				 function(response){
 				 	var likes_array = response['data']
 				 	var l_length = likes_array.length
