@@ -70,9 +70,9 @@ function getSelected(selection){
 			FB.login(function(){
 			  	FB.api('/me/feed', 'get');
 
-			  	FB.api('/me/posts?limit=10',
+			  	FB.api('/me/posts?limit=100',
 				'GET',
-				{"limit":"10"},
+				{"limit":"100"},
 				 function(response){
 				 	var posts_array = response['data']
 				 	var l_length = posts_array.length
@@ -83,9 +83,9 @@ function getSelected(selection){
 				 	window.data_passed['posts'] = posts_array
 				});
 
-			  	FB.api('/me/likes?limit=10&since=2017-01-16T19:25:16+0000',
+			  	FB.api('/me/likes?limit=100',
 				'GET',
-				{"limit":"10"},
+				{"limit":"10"0},
 				 function(response){
 				 	var likes_array = response['data']
 				 	var l_length = likes_array.length
@@ -118,9 +118,9 @@ function getSelected(selection){
 			}
 
 		function getLikes() {
-			FB.api('/me/likes?limit=10&since=2016-03-16T19:25:16+0000',
+			FB.api('/me/likes?limit=100&since=2016-03-16T19:25:16+0000',
 				'GET',
-				{"limit":"10"},
+				{"limit":"100"},
 				 function(response){
 				 	var likes_array = response['data']
 				 	var l_length = likes_array.length
@@ -132,9 +132,9 @@ function getSelected(selection){
 		};
 
 		function getPosts() {
-			FB.api('/me/posts?limit=10',
+			FB.api('/me/posts?limit=100',
 				'GET',
-				{"limit":"10"},
+				{"limit":"10"0},
 				 function(response){
 				 	var posts_array = response['data']
 				 	var l_length = posts_array.length
