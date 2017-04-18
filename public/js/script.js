@@ -148,13 +148,15 @@ function getSelected(selection){
 		function postItems(){
 			console.log("Logging");
 			window.data_passed.personality = window.selected;
-			window.data_passed.project = document.getElementById('dummy_input').value;
+			if(document.getElementById('dummy_input') != null) {
+				window.data_passed.project = document.getElementById('dummy_input').value;
+			}
 			$.ajax({
 				type: 'POST',
 				url: '/api/submit',
 				data: window.data_passed,
 				success: function() {
-					//window.location.href = "/submitted";
+					window.location.href = "/submitted";
 					console.log("Hurray!");
 				},
 				error: function() {
