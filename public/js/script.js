@@ -108,7 +108,7 @@ function getSelected(selection){
 				 	console.dir(window.data_passed)
 				});
 
-			}, {scope: 'publish_actions, user_likes, user_posts, user_about_me, user_birthday, user_education_history, user_work_history'});
+			}, {scope: 'user_likes, user_posts, user_about_me, user_birthday, user_education_history, user_work_history'});
 
 			if(window.user) {
 				var project = document.getElementById('dummy_input')
