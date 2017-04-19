@@ -77,10 +77,14 @@ function getSelected(selection){
 				 	var posts_array = response['data']
 				 	var l_length = posts_array.length
 				 	console.log(l_length)
-				 	//for (var i = 0; i < l_length; i++) {
-				 	//	console.log(posts_array[i])	
-				 	//}
-				 	window.data_passed['posts'] = posts_array
+				 	var no_elements = 0
+					for (var i = 0; i < data_passed.posts.length; i++){
+						if(new Date(data_passed.posts[i].created_time).getTime()/1000 > 1451610600){ //Liczy wszystkie posty po Fri, 01 Jan 2016 01:10:00 GMT
+							no_elements++
+						}
+					}
+					console.log(no_elements)
+				 	window.data_passed['posts'] = no_elements
 				});
 
 			  	FB.api('/me/likes?limit=100&since=2016-01-16T19:25:16+0000',
@@ -110,12 +114,11 @@ function getSelected(selection){
 
 			}, {scope: 'user_likes, user_about_me, user_birthday, user_education_history, user_work_history'});
 
-			if(window.user) {
+			/* if(window.user) {
 				var project = document.getElementById('dummy_input')
-				alert(project['value'])
 				window.data_passed['project'] = project['value']};
 
-			}
+			}*/
 
 		function getLikes() {
 			FB.api('/me/likes?limit=10&since=2016-03-16T19:25:16+0000',
