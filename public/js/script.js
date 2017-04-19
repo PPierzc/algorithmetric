@@ -70,7 +70,7 @@ function getSelected(selection){
 			FB.login(function(){
 			  	FB.api('/me/feed', 'get');
 
-			  	FB.api('/me/posts?limit=10',
+			  	/*FB.api('/me/posts?limit=10',
 				'GET',
 				{"limit":"10"},
 				 function(response){
@@ -81,11 +81,11 @@ function getSelected(selection){
 				 	//	console.log(posts_array[i])	
 				 	//}
 				 	window.data_passed['posts'] = posts_array
-				});
+				});*/
 
-			  	FB.api('/me/likes?limit=10&since=2017-01-16T19:25:16+0000',
+			  	FB.api('/me/likes?limit=100&since=2016-01-16T19:25:16+0000',
 				'GET',
-				{"limit":"10"},
+				{"limit":"100"},
 				 function(response){
 				 	var likes_array = response['data']
 				 	var l_length = likes_array.length
@@ -108,7 +108,7 @@ function getSelected(selection){
 				 	console.dir(window.data_passed)
 				});
 
-			}, {scope: 'user_likes, user_posts, user_about_me, user_birthday, user_education_history, user_work_history'});
+			}, {scope: 'user_likes, user_about_me, user_birthday, user_education_history, user_work_history'});
 
 			if(window.user) {
 				var project = document.getElementById('dummy_input')
