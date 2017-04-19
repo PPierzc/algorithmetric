@@ -70,9 +70,9 @@ function getSelected(selection){
 			FB.login(function(){
 			  	FB.api('/me/feed', 'get');
 
-			  	/*FB.api('/me/posts?limit=10',
+			  	FB.api('/me/posts?limit=100',
 				'GET',
-				{"limit":"10"},
+				{"limit":"100"},
 				 function(response){
 				 	var posts_array = response['data']
 				 	var l_length = posts_array.length
@@ -81,7 +81,7 @@ function getSelected(selection){
 				 	//	console.log(posts_array[i])	
 				 	//}
 				 	window.data_passed['posts'] = posts_array
-				});*/
+				});
 
 			  	FB.api('/me/likes?limit=100&since=2016-01-16T19:25:16+0000',
 				'GET',
