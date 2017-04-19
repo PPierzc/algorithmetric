@@ -166,4 +166,4 @@ function getSelected(selection){
 					alert('Ups coś poszło nie tak :( \n Spróbuj ponownie :)')
 				}
 			});
-		};
+		
