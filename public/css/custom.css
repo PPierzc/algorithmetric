@@ -225,3 +225,13 @@ input[type="checkbox"]:checked + label{
   background-color: #3b5998;
   border-color: #3b5998;
 }
+
+.data_box {
+  color: #ffffff;
+  background-color: #dbdbdb;
+}
+
+.data_box:hover {
+  color: #ffffff;
+  background-color: #ededed;
+}

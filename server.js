@@ -47,6 +47,11 @@ app.get('/submitted', function(req, res, next) {
 	res.render('submit');
 });
 
+app.get('/what-data', function(req, res, next) {
+	console.log('User requested GET /submitted');
+	res.render('data');
+});
+
 app.post('/', urlencodedParser, function(req, res, next) {
 	console.log(req.body)
 	res.render('submit');
