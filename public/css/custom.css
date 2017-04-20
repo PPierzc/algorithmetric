@@ -1,3 +1,9 @@
+.data_box {
+  margin: 1000px;
+  color: #ffffff;
+  background-color: #3b5998;
+}
+
 .personality_select {
   color: #000000;
 }
@@ -19,6 +25,7 @@
   background-color: #f1f2f2;
   color: #a1a2a2;
 }
+
 select{
 
     /* styling */
@@ -97,11 +104,18 @@ header {
 @media (min-width: 768px) {
   .navbar-default {
     background-color: #e6e7e8;
-    border-color: #fdc947;
+    border-color: #fdc947; 
   }
+
   h3{
     font-size: 16px;
     font-style: bold;
+  }
+  
+  .data_box {
+  margin: 1000px;
+  color: #ffffff;
+  background-color: #3b5998;
   }
 
 .center { 
@@ -224,14 +238,4 @@ input[type="checkbox"]:checked + label{
 .fb:hover {
   background-color: #3b5998;
   border-color: #3b5998;
-}
-
-.data_box {
-  color: #ffffff;
-  background-color: #dbdbdb;
-}
-
-.data_box:hover {
-  color: #ffffff;
-  background-color: #ededed;
 }

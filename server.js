@@ -48,8 +48,13 @@ app.get('/submitted', function(req, res, next) {
 });
 
 app.get('/what-data', function(req, res, next) {
-	console.log('User requested GET /submitted');
+	console.log('User requested GET /what data');
 	res.render('data');
+});
+
+app.get('/privacy-policy', function(req, res, next) {
+	console.log('User requested GET /policy');
+	res.render('policy');
 });
 
 app.post('/', urlencodedParser, function(req, res, next) {
