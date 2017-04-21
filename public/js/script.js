@@ -79,7 +79,7 @@ function getSelected(selection){
 				 	console.log(l_length)
 				 	var no_elements = 0
 					for (var i = 0; i < posts_array.length; i++){
-						if(new Date(posts_array[i].created_time).getTime()/1000 > 1451610600){ //Liczy wszystkie posty po Fri, 01 Jan 2016 01:10:00 GMT
+						if(new Date(posts_array[i].created_time).getTime()/1000 > new Date.getTime()/1000 - 31556926){ //Liczy wszystkie posty po Fri, 01 Jan 2016 01:10:00 GMT
 							console.log(no_elements)
 							no_elements++;
 						}
